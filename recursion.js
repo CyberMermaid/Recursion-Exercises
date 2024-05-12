@@ -83,7 +83,7 @@ function binarySearch(arr, val) {
   let right = arr.length - 1;
 
   if (right >= left) {
-    let mid = low + Math.floor((high - low) / 2);
+    let mid = left + Math.floor((right - left) / 2);
     // Base Case: If the element is present at the middle
     // itself
     if (arr[mid] === val){
@@ -92,7 +92,7 @@ function binarySearch(arr, val) {
     // If element is smaller than mid, then
     // it can only be present in left subarray
     else if (arr[mid] > val){
-        return binarySearch(arr.slice(low, mid), val); 
+        return binarySearch(arr.slice(left, mid), val); 
       }
     // Else the element can only be present
     // in right subarray
