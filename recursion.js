@@ -1,11 +1,10 @@
 /** product: calculate the product of an array of numbers. */
 
 function product(nums) {
-  // Base Case: If array nums is empty, product is undefined.
+  // Base Case: When array nums is empty, return the product of 1.
   if (nums.length === 0){
-    return undefined;
+    return 1;
   }
-
   // Recursive case: Return the product of the first element of the array with the remaining array
   return nums[0]*product(nums.slice(1));
 }
