@@ -72,8 +72,6 @@ function revString(str) {
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 function gatherStrings(obj) {
-  // add it to the array. If the value is an object, use recursion to gather strings from nested objects. Finally,
-  // return the array with all the collected string values.
   // Create an array to hold string values.
   let strArr = [];
   // Iterate through the values of an object  
@@ -86,6 +84,7 @@ function gatherStrings(obj) {
     // Recursively call gatherStrings on the nested object
     strArr = strArr.concat(gatherStrings(val));
   }}
+    // Finally, return the array with all the collected string values.
   return strArr;
 }
 
