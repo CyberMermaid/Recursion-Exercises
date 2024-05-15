@@ -72,11 +72,20 @@ function revString(str) {
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 function gatherStrings(obj) {
+  // add it to the array. If the value is an object, use recursion to gather strings from nested objects. Finally,
+  // return the array with all the collected string values.
+  // Create an array to hold string values.
   let strArr = [];
+  // Iterate through the values of an object  
   for(let val of Object.values(obj)){
+    // If the values are string, push them into the strArr
     if (typeof val === "string"){
-      strArr.push(val); }
-  }                     
+      strArr.push(val);
+  } //Check if value is an object and is not equal to null.
+  else if (typeof val === "object" && val!== null ){
+    // Recursively call gatherStrings on the nested object
+    strArr = strArr.concat(gatherStrings(val));
+  }}
   return strArr;
 }
 
